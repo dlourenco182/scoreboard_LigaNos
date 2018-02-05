@@ -24,6 +24,7 @@ div {
     font-family: system-ui;
     font-size: x-large;
     color: white;
+    display: inline-block;
 }
 
 .ep_colour {
@@ -41,4 +42,8 @@ div {
 
 #eq_fcp {
     background-color: blue;
+}
+
+p {
+    display: inline;
 }
