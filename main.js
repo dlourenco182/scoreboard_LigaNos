@@ -23,5 +23,31 @@ $(document).ready(function () {
         }
 
     });
+    $(".start_game").click(function () {
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var totalSeconds = 0;
+        var myTimer = setInterval(setTimer, 1000);
+
+        function setTimer() {
+            ++totalSeconds;
+            secondsLabel.innerHTML = lapdigit(totalSeconds % 60);
+            minutesLabel.innerHTML = lapdigit(parseInt(totalSeconds / 60));
+        }
+
+        function lapdigit(val) {
+            var valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
+        }
+        $(".pause_game").click(function () {
+            clearInterval(myTimer);
+        });
+
+
+    });
 
 });
