@@ -1,0 +1,44 @@
+section {
+    font-family: sans-serif;
+    width: 318px;
+    /* background properties */
+    text-align: center;
+    float: left;
+}
+
+.eq {
+    width: 102px;
+}
+
+.league_logo {
+    display: none;
+}
+
+div {
+    width: 102px;
+    height: 38px;
+    background-color: #202731;
+    float: left;
+    vertical-align: middle;
+    line-height: 38px;
+    font-family: system-ui;
+    font-size: x-large;
+    color: white;
+}
+
+.ep_colour {
+    width: 6px;
+    background-color: yellow;
+}
+
+.time {
+    margin-left: 108px;
+}
+
+#eq_slb {
+    background-color: red;
+}
+
+#eq_fcp {
+    background-color: blue;
+}
