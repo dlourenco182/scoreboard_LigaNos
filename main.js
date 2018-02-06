@@ -23,11 +23,16 @@ $(document).ready(function () {
         }
 
     });
+
+    var minutesLabel = document.getElementById("minutes");
+    var secondsLabel = document.getElementById("seconds");
+    var totalSeconds = 0;
+    var myTimer = null;
+
+
     $(".start_game").click(function () {
-        var minutesLabel = document.getElementById("minutes");
-        var secondsLabel = document.getElementById("seconds");
-        var totalSeconds = 0;
-        var myTimer = setInterval(setTimer, 1000);
+
+        myTimer = setInterval(setTimer, 1000);
 
         function setTimer() {
             ++totalSeconds;
@@ -43,11 +48,19 @@ $(document).ready(function () {
                 return valString;
             }
         }
-        $(".pause_game").click(function () {
-            clearInterval(myTimer);
-        });
 
 
+    });
+    $(".pause_game").click(function () {
+        clearInterval(myTimer);
+        timer = null;
+    });
+    $(".reset_game").click(function () {
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        secondsLabel.innerHTML = '00';
+        minutesLabel.innerHTML = '00';
+        totalSeconds = 0;
     });
 
 });
