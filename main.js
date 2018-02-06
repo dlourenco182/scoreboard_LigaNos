@@ -84,9 +84,9 @@ $(document).ready(function () {
         clearInterval(myTimer);
         var team = randomTeam();
         if (team === 1) {
-
+            alert('SAI FEJSA ENTRA SAMARIS!');
         } else {
-
+            alert('SAI HERRERA ENTRA ANDRÉ ANDRÉ!');
         }
     });
 });
