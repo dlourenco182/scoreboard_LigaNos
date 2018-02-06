@@ -7,10 +7,14 @@ $(document).ready(function () {
                 width: '100%'
             });
         });*/
+    function randomTeam() {
+        return Math.floor(Math.random() * 2) + 1;
+    }
+
     $(".goal").click(function () {
 
-        var randomNumber = Math.floor(Math.random() * 2) + 1;
-        if (randomNumber === 1) {
+        var team = randomTeam();
+        if (team === 1) {
             var element = document.getElementById('score_home');
             var goal_home = parseInt(element.innerHTML);
             goal_home++;
@@ -51,16 +55,38 @@ $(document).ready(function () {
 
 
     });
+
     $(".pause_game").click(function () {
         clearInterval(myTimer);
         timer = null;
     });
+
     $(".reset_game").click(function () {
         var minutesLabel = document.getElementById("minutes");
         var secondsLabel = document.getElementById("seconds");
+        var element = document.getElementById('score_home');
+        var goal_home = parseInt(element.innerHTML);
+        var elements = document.getElementById('score_away');
+        var goal_away = parseInt(elements.innerHTML);
+        elements.innerHTML = '0';
+        element.innerHTML = '0';
         secondsLabel.innerHTML = '00';
         minutesLabel.innerHTML = '00';
         totalSeconds = 0;
     });
 
+    $(".discount").click(function () {
+        var discount = Math.floor(Math.random() * 10) + 1;
+        alert('Discount time: ' + discount + "!");
+    });
+
+    $(".substitution").click(function () {
+        clearInterval(myTimer);
+        var team = randomTeam();
+        if (team === 1) {
+
+        } else {
+
+        }
+    });
 });
