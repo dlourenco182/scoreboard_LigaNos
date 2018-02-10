@@ -7,6 +7,15 @@ $(document).ready(function () {
                 width: '100%'
             });
         });*/
+
+
+
+    var minutesLabel = document.getElementById("minutes");
+    var secondsLabel = document.getElementById("seconds");
+    var totalSeconds = 0;
+    var myTimer = null;
+
+
     function randomTeam() {
         return Math.floor(Math.random() * 2) + 1;
     }
@@ -27,12 +36,6 @@ $(document).ready(function () {
         }
 
     });
-
-    var minutesLabel = document.getElementById("minutes");
-    var secondsLabel = document.getElementById("seconds");
-    var totalSeconds = 0;
-    var myTimer = null;
-
 
     $(".start_game").click(function () {
 
